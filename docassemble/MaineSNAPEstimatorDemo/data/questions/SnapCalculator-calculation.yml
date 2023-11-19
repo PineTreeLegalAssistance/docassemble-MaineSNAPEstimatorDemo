@@ -30,9 +30,11 @@ code: |
   else:            
    TwoHundredPctPov = arrTwoHundredTable[7]+((HHSize-8)*arrTwoHundredTable[8])
   # Does Asset test apply?
+  # IN MAINE THE ASSET TEST IS FUNCTIONALLY ABSENT. IF HH IS OVER ASSETS FOR FEDERAL SNAP MAINE STATE SNAP SUPPLEMENT WILL STILL BE APPLIED
   if ElderlyOrDisabled == "Yes" and TGMI > TwoHundredPctPov:
-    ApplyAssetTest = "Yes, assets must be <=" + currency(AssetTest_Threshold)
-    ApplyNetAssetTest = "Yes"       
+    ApplyAssetTest = "No"
+    #"Yes, assets must be <=" + currency(AssetTest_Threshold)
+    ApplyNetAssetTest = "No"       
   else:
     ApplyAssetTest = "No"  				
 	  ApplyNetAssetTest = "No"     
