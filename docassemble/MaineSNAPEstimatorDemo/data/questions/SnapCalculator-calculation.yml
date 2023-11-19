@@ -37,13 +37,14 @@ code: |
     ApplyAssetTest = "No"  				
 	  ApplyNetAssetTest = "No"     
   # Gross Income Test Result
-  if ElderlyOrDisabled == "No":
-    if TGMI < TwoHundredPctPov:
-      GITResult = "PASSED"
-    else:
-      GITResult = "FAILED"      	
+  #NOTE TO JACK: THIS IS NOT USED IN ME. EVERYONE IS SUBJECT TO GIT. HAVE ADJUSTED TO INCLUDE EVERYONE.
+  #if ElderlyOrDisabled == "No":
+  if TGMI < TwoHundredPctPov:
+    GITResult = "PASSED"
   else:
-    GITResult = "PASSED"  
+    GITResult = "FAILED"      	
+  #else:
+    #GITResult = "PASSED"  
   
   # Step 3. Net Income Test
   # 3-1-A. Standard Deduction
@@ -53,6 +54,7 @@ code: |
    StdDed = arrStdDed[5]
   # 3-1-B. Earned income deduction
   EarnedDed = GMEI * PCT_TO_EARNED_INCOME_DED
+  #NOTE TO JACK: Maine calculates this differently - if less than 35, 0 - if more than, subtract 35
   # 3-1-C. Medical deductions  
   ExcessMedDed = 0
   if ElderlyOrDisabled == "Yes":	  
