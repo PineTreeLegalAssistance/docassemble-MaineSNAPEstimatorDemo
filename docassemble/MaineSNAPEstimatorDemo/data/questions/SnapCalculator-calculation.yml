@@ -30,7 +30,7 @@ code: |
   else:            
    TwoHundredPctPov = arrTwoHundredTable[7]+((HHSize-8)*arrTwoHundredTable[8])
   # Does Asset test apply?
-  # IN MAINE THE ASSET TEST IS FUNCTIONALLY ABSENT. IF HH IS OVER ASSETS FOR FEDERAL SNAP MAINE STATE SNAP SUPPLEMENT WILL STILL BE APPLIED
+  # IN MAINE THE ASSET TEST IS FUNCTIONALLY ABSENT. IF HH IS OVER ASSETS FOR FEDERAL SNAP MAINE STATE SNAP SUPPLEMENT WILL STILL BE APPLIED. CODE HERE ADJUSTED FOR MAINE.
   if ElderlyOrDisabled == "Yes" and TGMI > TwoHundredPctPov:
     ApplyAssetTest = "No"
     #"Yes, assets must be <=" + currency(AssetTest_Threshold)
@@ -39,7 +39,7 @@ code: |
     ApplyAssetTest = "No"  				
 	  ApplyNetAssetTest = "No"     
   # Gross Income Test Result
-  #NOTE TO JACK: THIS IS NOT USED IN ME. EVERYONE IS SUBJECT TO GIT. HAVE ADJUSTED TO INCLUDE EVERYONE.
+  #NOTE TO JACK: THIS IS NOT USED IN MAINE. EVERYONE IS SUBJECT TO GIT. HAVE ADJUSTED TO INCLUDE EVERYONE.
   #if ElderlyOrDisabled == "No":
   if TGMI < TwoHundredPctPov:
     GITResult = "PASSED"
@@ -61,11 +61,15 @@ code: |
   ExcessMedDed = 0
   if ElderlyOrDisabled == "Yes":	  
     ElderlyOrDisabled1 = "Yes" #for 2nd display in docx.
-    temp = MedDed - MEDICAL_THRESHOLD
-    if MedDed > 190:	
-      ExcessMedDed = temp			
-		elif temp > 0:		  
-      ExcessMedDed = 155.00
+    if MedDed < MEDICAL_THRESHOLD:
+      ExcessMedDed = 0.00
+    elif MedDed > MEDICAL_THRESHOLD:
+      ExcessMedDed = MedDed - MEDICAL_THRESHOLD
+    #temp = MedDed - MEDICAL_THRESHOLD
+    #if MedDed > 190:	
+    #  ExcessMedDed = temp			
+		#elif temp > 0:		  
+    #  ExcessMedDed = 155.00
   else:        
     ElderlyOrDisabled1 = "No"	
     
