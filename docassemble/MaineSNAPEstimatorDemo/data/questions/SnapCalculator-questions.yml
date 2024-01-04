@@ -182,8 +182,6 @@ subquestion: |
   % else:
   ####You may be eligible for SNAP benefits.
   ####If you apply and are approved, your benefit may be <span style="color: red">${ currency(FinalResult) }</span> per month.<br>
-  **NOTE:** The amount above does not include the extra COVID supplemental SNAP currently in place.<br><br>
-  See [MassLegalServices.org/DTA-COVID-19](https://MassLegalServices.org/DTA-COVID-19) for more information.
   % endif
 
   ${ AssetTestScreenMsg }
