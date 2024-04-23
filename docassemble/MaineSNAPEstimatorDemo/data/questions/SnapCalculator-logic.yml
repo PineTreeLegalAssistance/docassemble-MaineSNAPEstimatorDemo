@@ -35,10 +35,13 @@ include:
 mandatory: true
 code: |
   #Question screen
+  set_progress(50)
   HHSize
+  set_progress(75)
   
   #Print option screen
   print_options
+  set_progress(100)
   
   #Final screen
   if print_options['Summary'] == True or print_options['Details'] == True or print_options['Inputs'] == True:
