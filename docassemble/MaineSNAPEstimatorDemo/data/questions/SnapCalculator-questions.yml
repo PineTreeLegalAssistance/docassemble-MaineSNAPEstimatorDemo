@@ -191,6 +191,6 @@ fields:
     choices:
       - Summary of possible SNAP benefits and how to apply: Summary
       - Calculation Details: Details
-      - View DTA Inputs: Inputs   
+      - View DHHS Inputs: Inputs   
 continue button label: Finish
    

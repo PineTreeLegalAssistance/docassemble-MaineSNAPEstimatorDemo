@@ -92,6 +92,6 @@ code: |
   elif print_options['Details']:        
     finalFile = "snap-details.docx"
   elif print_options['Inputs']:        
-    finalFile = "snap-dtaInputs.docx"
+    finalFile = "snap-dhhsInputs.docx"
 
 
