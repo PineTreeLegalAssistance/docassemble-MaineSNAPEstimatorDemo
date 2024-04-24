@@ -111,7 +111,7 @@ fields:
     datatype: currency        
   - note: |
       <span class="title_color">Enter Monthly Medical Costs</span>      
-      *A standard $155 deduction is allowed if medical expenses are $35/month or more.  But if actual expenses are greater than $190/mo, the full amount of the expenses is allowed as a deduction.
+      *Maine allows deductions for out-of-pocket medical expenses that exceed $35/month.  Put your total monthly out-of-pocket medical expenses and we’ll calculate what deduction you’re eligible for
     show if:
       variable: ElderlyOrDisabled
       is: Yes
