@@ -145,7 +145,7 @@ fields:
       <span class="navy">**Income**</span>    
       
       <span class="title_color">Enter Gross __*Unearned*__ Income</span><br>
-      Unemployment Comp, SSI, Social Security, Pensions, Veterans Benefits, Child Support, DTA cash assistance.
+      Unemployment Comp, SSI, Social Security, Pensions, Veterans Benefits, Child Support, cash assistance.
   - Income frequency : Uneared_Income
     input type: radio
     choices:
@@ -216,7 +216,7 @@ fields:
     show if:
       variable: hasDependent
       is: Yes
-  - Include the costs of any child or adult daycare, babysitting, before/after school care, transportation: DepCareDed
+  - Include the costs of any child or adult daycare, babysitting, before/after school care, and transportation: DepCareDed
     datatype: currency        
     show if:
       variable: hasDependent
