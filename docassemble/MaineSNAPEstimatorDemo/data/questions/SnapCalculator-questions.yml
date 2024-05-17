@@ -95,6 +95,17 @@ question: |
 subquestion: |
     Welcome to PTLA's **Maine SNAP Benefits Estimator** where you can estimate monthly SNAP benefits for Maine households. 
     
+    <strong>SNAP eligibility is calculated based on your</strong>:
+    <ul>
+    <li>Household size</li>
+    <li>Income</li>
+    <li>Certain expenses like shelter costs</li>
+    </ul>
+    
+    This tool asks questions about these factors to estimate your monthly SNAP benefits.  
+
+    It should take less than 5 minutes to complete.
+
     Please read our terms of use before continuing.
     
     ${ display_template(PTLA_terms_of_use, scrollable=True, collapse=False) }
@@ -125,9 +136,11 @@ subquestion: |
 
   We have tried to make this tool easy to understand - but eligibilty for SNAP can be complicated. We cannot guarantee the result from this calculator will be the amount of SNAP benefits you get, if you are eligible. But it can help you understand how those calculations work, and get an idea of what SNAP benefits you may be eligible for. 
   
+  Click on green words to learn more about those terms or questions.
+  
   <strong>Insert link to new SNAP Client ed/other additional info here.</strong>
   
-  <span class="navy">**Household Composition**</span> 
+  <h2>Household Composition</h2> 
 fields:
   - Household size: HHSize  
     datatype: integer    
@@ -142,9 +155,9 @@ fields:
       - Yes
       - No    
   - note: |
-      <span class="navy">**Income**</span>    
+      <h2>Income</h2>    
       
-      <span class="title_color">Enter Gross __*Unearned*__ Income</span><br>
+      <strong>Enter Gross __*Unearned*__ Income</strong><br>
       Unemployment Comp, SSI, Social Security, Pensions, Veterans Benefits, Child Support, cash assistance.
   - Income frequency : Uneared_Income
     input type: radio
@@ -171,7 +184,7 @@ fields:
       variable: Uneared_Income
       is: Wkly
   - note: |  
-      <span class="title_color">Enter Gross __*Earned*__ Income</span><br>
+      <strong>Enter Gross __*Earned*__ Income</strong><br>
       Wages or salaries. For self-employment, including independent contractors, input gross income after business expenses.
   - Income frequency : Earned_Income
     input type: radio
@@ -195,14 +208,17 @@ fields:
     show if:
       variable: Earned_Income
       is: Wkly
-  - html: <span class="navy"><b>Expenses</b></span>       
+  - html: <h2><b>Expenses</b></h2>       
   - note: |
-      <span class="title_color">Enter Monthly Child Support Amount</span>  
+      <strong>Enter Monthly Child Support Amount</strong>  
   - Child support paid by the household that is legally obligated: ChildSupport
     datatype: currency        
   - note: |
-      <span class="title_color">Enter Monthly Medical Costs</span>      
-      *Maine allows deductions for out-of-pocket medical expenses that exceed $35/month.  Put your total monthly out-of-pocket medical expenses and we’ll calculate what deduction you’re eligible for
+      <strong>Enter Monthly Medical Costs</strong>      
+      Maine allows deductions for out-of-pocket medical expenses that are more than $35/month.  Put your total monthly out-of-pocket medical expenses and we’ll calculate what deduction you’re eligible for.
+      
+      Examples include but are not limited to: dental or medical care (including attendant care) costs not covered by insurance; prescription and over the counter medications; medical supplies; Medicare and other insurance premiums; food and vet bills for a trained service animal; dentures, hearing aids, and prosthetics; transportation and lodging costs to obtain medical treatment.
+      
     show if:
       variable: ElderlyOrDisabled
       is: Yes
@@ -212,7 +228,7 @@ fields:
       variable: ElderlyOrDisabled
       is: Yes
   - note: |
-      <span class="title_color">Enter Monthly Dependent Care Costs for Children or Disabled Adults</span>  
+      <strong>Enter Monthly Dependent Care Costs for Children or Disabled Adults</strong>  
     show if:
       variable: hasDependent
       is: Yes
@@ -221,7 +237,7 @@ fields:
     show if:
       variable: hasDependent
       is: Yes    
-  - html: <span class="title_color">Enter Monthly Shelter Costs</span>
+  - html: <strong>Enter Monthly Shelter Costs</strong>
   - Is the household currently homeless?: isHomeless  
     input type: radio
     choices:
@@ -237,7 +253,7 @@ fields:
     show if:
       variable: isHomeless
       is: No  
-  - Does the household have any heat or air conditioning costs (any time of year), or received Fuel Assistance in the last 12 months?: paysAC
+  - Does the household have any heat or air conditioning costs (any time of year), or did your household get fuel assistance (like LIHEAP) in the last 12 months?: paysAC
     input type: radio
     choices:
       - Yes
@@ -261,6 +277,17 @@ fields:
     show if:
       variable: paysElec
       is: No
+auto terms: 
+  Household size: |
+    Your SNAP household is everyone who lives with you who regularly purchases and prepares food together.
+  Green words: |
+    Words in green are defined or have help text that will show up if you click on them!
+  child care or disabled adult care costs: |
+    If you pay for childcare, home health aide, or other out-of-pocket costs for the care of a dependent while you work, job search, or attend job training or education, enter these costs here.
+  legally obligated: |
+    Only count child support that is paid under a court order. Voluntary payments or buying clothes, food, or other needs for children can’t be deducted here.
+  homeowner expenses: |
+    You can count any recurring charges like mortgage, condo fees, mandatory association fees, property taxes, insurance, electricity, gas, heating/cooling costs, cooking fuel, water, sewer, and trash collection AND repair costs if the damage was caused by a natural disaster.
 continue button label: See Results
 ---
 id: downloadChoice
@@ -269,10 +296,10 @@ comment: |
 question: |
 subquestion: |
   % if FinalResult <= 0:
-  ####You do not seem to be eligible for SNAP benefits.
+  ####You do not seem to be eligible for SNAP benefits. There may still be other programs and resources that can help - learn more from <a href="https://maineequaljustice.org/help-is-available/food-security/#:~:text=Here%20are%20some%20ways%20to%20apply%3A%201%20You,go%20to%20My%20Maine%20Connection%20and%20apply%20online">Maine Equal Justice</a> or <a href="https://www.gsfb.org/food-map/">find a food pantry near you</a>.
   % else:
   ####You may be eligible for SNAP benefits.
-  ####If you apply and are approved, your benefit may be <span style="color: red">${ currency(FinalResult) }</span> per month.<br>
+  ####If you apply and are approved, your benefit may be <span style="color: green">${ currency(FinalResult) }</span> per month.<br>
   % endif
 
   ${ AssetTestScreenMsg }
