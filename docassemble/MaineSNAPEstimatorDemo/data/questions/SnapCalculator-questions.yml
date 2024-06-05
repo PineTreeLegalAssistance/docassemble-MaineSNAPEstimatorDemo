@@ -222,17 +222,21 @@ fields:
     show if:
       variable: ElderlyOrDisabled
       is: Yes
-  - Health Care Costs, including over-the-counter health care items and transportation: MedDed
+  - Monthly medical costs: MedDed
     datatype: currency        
     show if:
       variable: ElderlyOrDisabled
       is: Yes
   - note: |
-      <strong>Enter Monthly Dependent Care Costs for Children or Disabled Adults</strong>  
+      <strong>Enter Monthly Dependent Care Costs for Children or Disabled Adults</strong>      
+      Maine allows deductions for out-of-pocket costs for the care of a dependent (child or disabled adult) while you work, job search, or attend job training or education. 
+      
+      Examples include but are not limited to: daycare, babysitting, before/after school care, home health aides, and other attendant care costs.
+      
     show if:
       variable: hasDependent
       is: Yes
-  - Include the costs of any child or adult daycare, babysitting, before/after school care, and transportation: DepCareDed
+  - Monthly dependent care costs: DepCareDed
     datatype: currency        
     show if:
       variable: hasDependent
@@ -283,7 +287,7 @@ auto terms:
   Green words: |
     Words in green are defined or have help text that will show up if you click on them!
   child care or disabled adult care costs: |
-    If you pay for childcare, home health aide, or other out-of-pocket costs for the care of a dependent while you work, job search, or attend job training or education, enter these costs here.
+    If you pay for childcare, home health aide, or other out-of-pocket costs for the care of a dependent while you work, job search, or attend job training or education. Choose 'yes' and we will ask about these costs below.
   legally obligated: |
     Only count child support that is paid under a court order. Voluntary payments or buying clothes, food, or other needs for children can’t be deducted here.
   homeowner expenses: |
