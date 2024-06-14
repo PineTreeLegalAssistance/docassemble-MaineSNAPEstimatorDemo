@@ -141,6 +141,7 @@ subquestion: |
   <strong>Insert link to new SNAP Client ed/other additional info here.</strong>
   
   <h2>Household Composition</h2> 
+  <br></br>
 fields:
   - Household size: HHSize  
     datatype: integer    
@@ -158,7 +159,7 @@ fields:
       <h2>Income</h2>    
       
       <strong>Enter Gross __*Unearned*__ Income</strong><br>
-      Unemployment Comp, SSI, Social Security, Pensions, Veterans Benefits, Child Support, cash assistance.
+      Examples: Unemployment Insurance Benefits, SSI, Social Security Disability Insurance (SSDI) or Retirement, Pensions, Veterans Benefits, Child Support, cash assistance like TANF, etc.
   - Income frequency : Uneared_Income
     input type: radio
     choices:
@@ -185,7 +186,7 @@ fields:
       is: Wkly
   - note: |  
       <strong>Enter Gross __*Earned*__ Income</strong><br>
-      Wages or salaries. For self-employment, including independent contractors, input gross income after business expenses.
+      Wages or salaries. For self-employment, including independent contractors, enter your gross income after business expenses.
   - Income frequency : Earned_Income
     input type: radio
     choices:
@@ -215,7 +216,7 @@ fields:
     datatype: currency        
   - note: |
       <strong>Enter Monthly Medical Costs</strong>      
-      Maine allows deductions for out-of-pocket medical expenses that are more than $35/month.  Put your total monthly out-of-pocket medical expenses and we’ll calculate what deduction you’re eligible for.
+      For people over 60 or people who get a disability based benefit, Maine allows deductions for out-of-pocket medical expenses that are more than $35/month.  Put your total monthly out-of-pocket medical expenses and we’ll calculate what deduction you’re eligible for.
       
       Examples include but are not limited to: dental or medical care (including attendant care) costs not covered by insurance; prescription and over the counter medications; medical supplies; Medicare and other insurance premiums; food and vet bills for a trained service animal; dentures, hearing aids, and prosthetics; transportation and lodging costs to obtain medical treatment.
       
