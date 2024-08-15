@@ -138,7 +138,7 @@ subquestion: |
   
   Click on green words to learn more about those terms or questions.
   
-  <strong>Insert link to new SNAP Client ed/other additional info here.</strong>
+  Have questions or need more information about SNAP/Food supplements? Read our <strong><a href="https://www.ptla.org/Maine-SNAP-Guide">Guide to SNAP Benefits in Maine</a></strong>
   
   <h2>Household Composition</h2> 
   <br></br>
@@ -186,7 +186,7 @@ fields:
       is: Wkly
   - note: |  
       <strong>Enter Gross __*Earned*__ Income</strong><br>
-      Wages or salaries. For self-employment, including independent contractors, enter your gross income after business expenses.
+      Wages or salaries. For self employment, including independent contractors, enter your average monthly net income (your gross income minus your business expenses).
   - Income frequency : Earned_Income
     input type: radio
     choices:
