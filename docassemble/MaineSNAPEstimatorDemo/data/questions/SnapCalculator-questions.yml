@@ -108,9 +108,7 @@ subquestion: |
     <li>Certain expenses like shelter costs</li>
     </ul>
     
-    This tool asks questions about these factors to estimate your monthly SNAP benefits.  
-
-    It should take less than 5 minutes to complete.
+    This tool asks questions about these factors to estimate your monthly SNAP benefits. It should take less than 5 minutes to complete.
 
     Please read our terms of use before continuing.
     
@@ -135,36 +133,39 @@ continue button label: Get Started
 ---
 template: immigration_explanation
 subject: |
-  Explain immigrant SNAP eligibility
+  Need information about immigrant eligibility for SNAP in Maine?
 content: |
   ##### Which immigrants can be eligible for SNAP in Maine?
 
-  Immigrant Eligibility for SNAP in Maine
   Many immigrants in Maine are eligible for SNAP benefits. You can use this information to figure out how many adults and children you should count in your household size for SNAP.
 
-  Federal law restricts which immigrants can receive SNAP. Many immigrants in Maine are eligible for SNAP. Include everyone in your family who has one of these statuses: 
-  •	 Refugee
-  •	Asylee
-  •	Certain Lawful Permanent Residents (Green Card Holders)
-  •	Individual Subject to Trafficking (T or U Visa)
-  • Cuban and Haitian Entrant
-  •	North American Indigenous People Born in Canada
-  •	Deportee Whose Deportation is Withheld
-  •	Iraqi Special Immigrant
-  •	Afghan Special Immigrant
-  •	Certain Amerasian Immigrants
-  •	Certain Hmong and Highland Laotians
-  •	Certain Individuals Paroled into the U.S. for 1+ year
-  •	Certain Individuals Granted Conditional Entrance
+  Federal law restricts which immigrants can receive SNAP. Many immigrants in Maine are eligible for SNAP. Include everyone in your family who has one of these statuses:
+  <ul>
+  <li>Refugee</li>
+  <li>Asylee</li>
+  <li>Certain Lawful Permanent Residents (Green Card Holders)</li>
+  <li>Individual Subject to Trafficking (T or U Visa)</li>
+  <li>Cuban and Haitian Entrant</li>
+  <li>North American Indigenous People Born in Canada</li>
+  <li>Deportee Whose Deportation is Withheld</li>
+  <li>Iraqi Special Immigrant</li>
+  <li>Afghan Special Immigrant</li>
+  <li>Certain Amerasian Immigrants</li>
+  <li>Certain Hmong and Highland Laotians</li>
+  <li>Certain Individuals Paroled into the U.S. for 1+ year</li>
+  <li>Certain Individuals Granted Conditional Entrance</li>
+  </ul>
 
   Is your family seeking asylum in the U.S.?
   If yes, you may apply for SNAP if: 
-    1.	a caretaker in the family is elderly or disabled;
-    2.	anyone in the family has experienced domestic violence;
-    3.	you have submitted an application for asylum and are waiting to apply for your work permit; or
-    4.	you have received your work permit but haven’t found a job yet.
+  <ol>
+  <li>a caretaker in the family is elderly or disabled;</li>
+  <li>anyone in the family has experienced domestic violence;</li>
+  <li>you have submitted an application for asylum and are waiting to apply for your work permit; or</li>
+  <li>you have received your work permit but haven’t found a job yet.</li>
+  </ol>  
 
-  Note: If you’re an asylum seeker and have been receiving SNAP, your SNAP eligibility will change once you get your work permit and start working.  Contact Maine Equal Justice for questions about this. 
+  <strong>Note</strong>: If you’re an asylum seeker and have been getting SNAP, your SNAP eligibility will change once you get your work permit and start working.  <a href="https://maineequaljustice.org/contact-us/">Contact Maine Equal Justice</a> for questions about this. 
 
 ---
 id: Questions
@@ -176,11 +177,12 @@ subquestion: |
 
   We have tried to make this tool easy to understand - but eligibilty for SNAP can be complicated. We cannot guarantee the result from this calculator will be the amount of SNAP benefits you get, if you are eligible. But it can help you understand how those calculations work, and get an idea of what SNAP benefits you may be eligible for. 
   
-  Click on green words to learn more about those terms or questions.
+  If you have questions or need more information about SNAP/Food supplements in general, read our <strong><a href="https://www.ptla.org/Maine-SNAP-Guide">Guide to SNAP Benefits in Maine</a></strong>
+  
+  Click on green words on this page to learn more about those terms or questions.
   
   ${ prog_disclose(immigration_explanation) }
   
-  Have questions or need more information about SNAP/Food supplements? Read our <strong><a href="https://www.ptla.org/Maine-SNAP-Guide">Guide to SNAP Benefits in Maine</a></strong>
   
   <h2>Household Composition</h2> 
   <br></br>
