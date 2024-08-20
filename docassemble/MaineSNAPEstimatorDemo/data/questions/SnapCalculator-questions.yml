@@ -24,6 +24,12 @@ code: |
   RentMortgageDed = 0
   HomeownerDed = 0
 ---
+modules:
+  - .progressivedisclosure
+---
+features:
+  css: progressivedisclosure.css
+---
 template: PTLA_terms_of_use
 content: |
   ## Pine Tree Legal Assistance's Terms of Use and Privacy Policy
@@ -127,6 +133,40 @@ fields:
 continue button field: al_intro_screen
 continue button label: Get Started  
 ---
+template: immigration_explanation
+subject: |
+  Explain immigrant SNAP eligibility
+content: |
+  ##### Which immigrants can be eligible for SNAP in Maine?
+
+  Immigrant Eligibility for SNAP in Maine
+  Many immigrants in Maine are eligible for SNAP benefits. You can use this information to figure out how many adults and children you should count in your household size for SNAP.
+
+  Federal law restricts which immigrants can receive SNAP. Many immigrants in Maine are eligible for SNAP. Include everyone in your family who has one of these statuses: 
+  •	 Refugee
+  •	Asylee
+  •	Certain Lawful Permanent Residents (Green Card Holders)
+  •	Individual Subject to Trafficking (T or U Visa)
+  • Cuban and Haitian Entrant
+  •	North American Indigenous People Born in Canada
+  •	Deportee Whose Deportation is Withheld
+  •	Iraqi Special Immigrant
+  •	Afghan Special Immigrant
+  •	Certain Amerasian Immigrants
+  •	Certain Hmong and Highland Laotians
+  •	Certain Individuals Paroled into the U.S. for 1+ year
+  •	Certain Individuals Granted Conditional Entrance
+
+  Is your family seeking asylum in the U.S.?
+  If yes, you may apply for SNAP if: 
+    1.	a caretaker in the family is elderly or disabled;
+    2.	anyone in the family has experienced domestic violence;
+    3.	you have submitted an application for asylum and are waiting to apply for your work permit; or
+    4.	you have received your work permit but haven’t found a job yet.
+
+  Note: If you’re an asylum seeker and have been receiving SNAP, your SNAP eligibility will change once you get your work permit and start working.  Contact Maine Equal Justice for questions about this. 
+
+---
 id: Questions
 question: |
 subquestion: |
@@ -137,6 +177,8 @@ subquestion: |
   We have tried to make this tool easy to understand - but eligibilty for SNAP can be complicated. We cannot guarantee the result from this calculator will be the amount of SNAP benefits you get, if you are eligible. But it can help you understand how those calculations work, and get an idea of what SNAP benefits you may be eligible for. 
   
   Click on green words to learn more about those terms or questions.
+  
+  ${ prog_disclose(immigration_explanation) }
   
   Have questions or need more information about SNAP/Food supplements? Read our <strong><a href="https://www.ptla.org/Maine-SNAP-Guide">Guide to SNAP Benefits in Maine</a></strong>
   
