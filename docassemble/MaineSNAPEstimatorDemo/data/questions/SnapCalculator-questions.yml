@@ -185,7 +185,7 @@ subquestion: |
   
   
   <h2>Household Composition</h2> 
-  <br></br>
+  <br />
 fields:
   - Household size: HHSize  
     datatype: integer    
