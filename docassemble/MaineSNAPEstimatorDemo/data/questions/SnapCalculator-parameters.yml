@@ -1,7 +1,7 @@
 ---
 initial: True
 code: |
-  as_of_date = "Effective as of October 24, 2023"
+  as_of_date = "Effective as of October 1, 2024"
   calcDate = today()
   
   # Parameters needing (semi)annual updates
@@ -15,10 +15,10 @@ code: |
   PHONE = 58
   NON_HEATING_UTILITY = 341
   HEATING_UTILITY = 1011  
-  arrTwoHundredTable = [2430, 3287, 4144, 5000, 5857, 6714, 7570, 8427, 857]
-  arrStdDed = [198, 198, 198, 208, 244, 279]
-  arrMaxAllowableNIC = [1215, 1644, 2072, 2500, 2929, 3357, 3785, 4214, 429]
-  arrMaxSNAPAllotment = [291, 535, 766, 973, 1155, 1386, 1532, 1751, 219]
+  arrTwoHundredTable = [2510, 3407, 4304, 5200, 6097, 6994, 7890, 8787, 897]
+  arrStdDed = [204, 204, 204, 217, 254, 291]
+  arrMaxAllowableNIC = [1255, 1704, 2152, 2600, 3049, 3497, 3945, 4394, 449]
+  arrMaxSNAPAllotment = [292, 536, 768, 975, 1158, 1390, 1536, 1756, 220]
   # Standard utility allowance - heating, non-heating, zero util, telephone
   arrStdUtilAllowance = [HEATING_UTILITY, NON_HEATING_UTILITY, 0.00, PHONE]
   # Asset test  
