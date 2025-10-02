@@ -304,7 +304,8 @@ fields:
     show if:
       variable: isHomeless
       is: No  
-  - Does the household have any heat or air conditioning costs (any time of year), or did your household get fuel assistance (like LIHEAP) in the last 12 months?: paysAC
+  - Does the household have any heat or air conditioning costs not included in the rent or mortgage (any time of year)?: paysAC
+  #or did your household get fuel assistance (like LIHEAP) in the last 12 months?: paysAC
     input type: radio
     choices:
       - Yes
@@ -312,6 +313,14 @@ fields:
     show if:
       variable: isHomeless
       is: No
+  - Did the household get any fuel assistance (like LIHEAP) in the last 12 months?: FuelAssistance
+    input type: radio
+    choices:
+      - Yes
+      - No
+    show if:
+      variable: paysAC
+      is: No    
   - Does the household pay for electricity for non-heating purposes or for trash collection?: paysElec
     input type: radio
     choices:

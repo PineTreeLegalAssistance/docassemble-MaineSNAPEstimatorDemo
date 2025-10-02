@@ -87,7 +87,12 @@ code: |
 	StdUtilAllowance = 0
   if paysAC == "Yes":
 		UtilStatus = "Heating"
+    FuelAssistance = "No"
 		StdUtilAllowance = arrStdUtilAllowance[0]
+  elif paysAC == "No" and FuelAssistance == "Yes" and ElderlyOrDisabled == "Yes":
+    UtilStatus = "Heating"
+    StdUtilAllowance = arrStdUtilAllowance[0]
+  #elif paysAC == "No" and ElderlyOrDisabled == "No":  
 	elif paysElec == "Yes":
 		UtilStatus = "Non-heating"
 		StdUtilAllowance = arrStdUtilAllowance[1]
