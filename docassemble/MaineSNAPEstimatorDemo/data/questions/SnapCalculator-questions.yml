@@ -99,9 +99,7 @@ id: Terms
 question: |
   Maine SNAP Benefits Estimator: Pine Tree Legal Forms Project
 subquestion: |
-    Welcome to PTLA's **Maine SNAP Benefits Estimator** where you can estimate monthly SNAP benefits for Maine households.
-    
-    <strong>October 1st, 2025 Notice</strong>: We have updated the yearly figures for this estimator, but <strong>have not</strong> yet adjusted this tool to reflect any other recent changes to these calculations. We will be updating this tool again soon!
+    Welcome to PTLA's **Maine SNAP Benefits Estimator** where you can estimate monthly SNAP benefits for Maine households.    
     
     <strong>SNAP eligibility is calculated based on your</strong>:
     <ul>
@@ -304,7 +302,8 @@ fields:
     show if:
       variable: isHomeless
       is: No  
-  - Does the household have any heat or air conditioning costs (any time of year), or did your household get fuel assistance (like LIHEAP) in the last 12 months?: paysAC
+  - Does the household have any heat or air conditioning costs not included in the rent or mortgage (any time of year)?: paysAC
+  #or did your household get fuel assistance (like LIHEAP) in the last 12 months?: paysAC
     input type: radio
     choices:
       - Yes
@@ -312,15 +311,29 @@ fields:
     show if:
       variable: isHomeless
       is: No
-  - Does the household pay for electricity for non-heating purposes or for trash collection?: paysElec
+  - Did the household get any fuel assistance (like LIHEAP) in the last 12 months?: FuelAssistance
+    input type: radio
+    choices:
+      - Yes
+      - No
+    js show if: |
+      val('paysAC') === "No" && val('ElderlyOrDisabled') === "Yes"
+    #&& val("ElderlyOrDisabled['Yes']")
+    #show if:
+      #variable: paysAC
+      #is: No    
+      #It would be ideal to hide this question if there are no elderly or disabled HH members
+  - Do you pay for at least 2 of the following expenses - cooking, lights, water, sewer, phone, or trash collection (including the cost of trash bags, landfill fees, or transfer station fees)?: paysElec
     input type: radio
     choices:
       - Yes
       - No    
-    show if:
-      variable: paysAC
-      is: No
-  - Does the household pay for its own telephone service?: paysTelephone
+    js show if: |
+      val('paysAC') === "No" && val('ElderlyOrDisabled') === "No" || val('FuelAssistance') === "No" && val('ElderlyOrDisabled') === "Yes"
+    #show if:
+      #variable: FuelAssistance
+      #is: No
+  - Does the household pay for its own landline or cell phone costs?: paysTelephone
     input type: radio
     choices:
       - Yes

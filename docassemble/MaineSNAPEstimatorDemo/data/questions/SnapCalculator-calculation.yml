@@ -1,16 +1,54 @@
 ---
 code: |
   # Set defaults for Conditionally hidden fields.
+  ###NOTE TO JACK: You left off work here, it may be working. Needs additional testing.
+  ###Nope, not working on branch of EoD:YES, LiHEAP:No, PaysElec:Yes - works until I try to download anything, weirdly. Logic on page works as it should. 
+
   if isHomeless == "Yes":  
     paysAC = "No"
     paysElec = "No"
     paysTelephone = "No"
+    FuelAssistance = "No"
   else:
-    if paysAC == "Yes":
+    if paysAC == "Yes" and ElderlyOrDisabled == "Yes":
+      FuelAssistance = "No"
       paysElec = "No"
       paysTelephone = "No"
-    elif paysElec == "Yes":
+    elif paysAC == "Yes" and ElderlyOrDisabled == "No":
+      FuelAssistance = "No"
+      paysElec = "No"
       paysTelephone = "No"
+    elif paysAC == "No" and ElderlyOrDisabled == "No" and paysElec == "Yes":
+      FuelAssistance = "No"
+      paysTelephone = "No"  
+    elif paysAC == "No" and ElderlyOrDisabled == "Yes" and FuelAssistance == "Yes":
+      paysElec = "No"
+      paysTelephone = "No"
+    elif paysAC == "No" and ElderlyOrDisabled == "Yes" and FuelAssistance == "No" and paysElec == "Yes":
+      paysTelephone = "No"
+    else:
+        FuelAssistance = "No"  
+    #else:
+    #  if paysAC == "Yes":
+    #    paysElec = "No"
+    #    paysTelephone = "No"
+    #  elif FuelAssistance == "Yes":
+    #    paysElec = "No"
+    #    paysTelephone = "No"
+    #  elif paysElec == "Yes":
+    #    FuelAssistance = "No"
+    #    paysTelephone = "No"
+      #else:
+        #FuelAssistance = "No"
+      
+  #if paysAC == "Yes":
+   # paysElec = "No"
+    #paysTelephone = "No"
+  #elif FuelAssistance == "Yes":
+    #paysElec = "No"
+    #paysTelephone = "No"
+  #elif paysElec == "Yes":
+    #paysTelephone = "No"
 
   # Step 1. Household - nothing to do here.
   # Step 2. Gross Income Test
@@ -87,12 +125,19 @@ code: |
 	StdUtilAllowance = 0
   if paysAC == "Yes":
 		UtilStatus = "Heating"
+    #FuelAssistance = "No"
 		StdUtilAllowance = arrStdUtilAllowance[0]
+  elif paysAC == "No" and FuelAssistance == "Yes" and ElderlyOrDisabled == "Yes":
+    UtilStatus = "Heating"
+    StdUtilAllowance = arrStdUtilAllowance[0]
+  #elif paysAC == "No" and ElderlyOrDisabled == "No":  
 	elif paysElec == "Yes":
 		UtilStatus = "Non-heating"
+    #FuelAssistance = "No"
 		StdUtilAllowance = arrStdUtilAllowance[1]
 	elif paysTelephone == "Yes":
 		UtilStatus = "Telephone"
+    #FuelAssistance = "No"
 		StdUtilAllowance = arrStdUtilAllowance[3]
 	else:
 		UtilStatus = "Zero Expense"
